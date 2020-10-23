@@ -17,6 +17,19 @@ class Api {
     });
   }
 
+  void signup() {
+    http.post(Config.signup, headers: {
+      'Accept': 'application/json',
+    }, body: {
+      "email": "mohammed.essa@gmail.com",
+      "password": "123456"
+    }).then((response) {
+      print('response : ${response.body}');
+      Map mapValue = json.decode(response.body);
+      mapValue.values.toString();
+    });
+  }
+
   Future<List> getData() async {
     String url = "http://192.168.43.233:5001/signin";
     http.Response response = await http.get(url, headers: {
@@ -59,34 +72,6 @@ class Api {
       'token': 'jhkhlhlhlhlhlkhlkhlh'
     }).then((response) {
       print('response : ${response.body}');
-    });
-  }
-
-  void loginData() {
-    String url = "http://192.168.43.233:5001/signin";
-    http.post(url, headers: {
-      'Accept': 'application/json',
-    }, body: {
-      "email": "adminstrator@gmail.com",
-      "password": "123456"
-    }).then((response) {
-      print('response : ${response.body}');
-      Map mapValue = json.decode(response.body);
-      mapValue.values.toString();
-    });
-  }
-
-  void signupData() {
-    String url = "http://192.168.43.233:5001/signin";
-    http.post(url, headers: {
-      'Accept': 'application/json',
-    }, body: {
-      "email": "mohammed.essa@gmail.com",
-      "password": "123456"
-    }).then((response) {
-      print('response : ${response.body}');
-      Map mapValue = json.decode(response.body);
-      mapValue.values.toString();
     });
   }
 
