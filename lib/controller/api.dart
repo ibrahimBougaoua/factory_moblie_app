@@ -30,9 +30,8 @@ class Api {
     });
   }
 
-  Future<List> getData() async {
-    String url = "http://192.168.43.233:5001/signin";
-    http.Response response = await http.get(url, headers: {
+  Future<List> getAllFactoris() async {
+    http.Response response = await http.get(Config.factoris, headers: {
       'Accept': 'application/json',
       'token': 'jhkhlhlhlhlhlkhlkhlh'
     });
