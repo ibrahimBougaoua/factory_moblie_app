@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:factory_moblie_app/config/config.dart';
+import 'package:factory_moblie_app/controller/sharedPreferences.dart';
 import 'dart:convert';
 
 class Api {
@@ -13,7 +14,9 @@ class Api {
     }).then((response) {
       print('response : ${response.body}');
       Map mapValue = json.decode(response.body);
-      mapValue.values.toString();
+      var values = mapValue.values.toList();
+      //SharedPreferencesHilper sharedPreferencesHilper = new SharedPreferencesHilper();
+      //sharedPreferencesHilper.storeToken(values[0]);
     });
   }
 
