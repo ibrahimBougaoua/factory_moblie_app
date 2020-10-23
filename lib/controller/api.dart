@@ -4,12 +4,12 @@ import 'dart:convert';
 
 class Api {
 
-  void signin() {
+  void signin(String email,String password) {
     http.post(Config.signin, headers: {
       'Accept': 'application/json',
     }, body: {
-      "email": "adminstrator@gmail.com",
-      "password": "123456"
+      "email": email,
+      "password": password
     }).then((response) {
       print('response : ${response.body}');
       Map mapValue = json.decode(response.body);

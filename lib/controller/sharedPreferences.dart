@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class sharedPreferences {
+class SharedPreferencesHilper {
 
   _storeToken(String token) async
   {
