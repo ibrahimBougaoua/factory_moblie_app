@@ -5,8 +5,10 @@ import 'dart:convert';
 
 class Api {
 
-  void signin(String email,String password) {
-    http.post(Config.signin, headers: {
+  bool statue;
+
+   signin(String email,String password)  async {
+    await http.post(Config.signin, headers: {
       'Accept': 'application/json',
     }, body: {
       "email": email,
@@ -15,8 +17,9 @@ class Api {
       print('response : ${response.body}');
       Map mapValue = json.decode(response.body);
       var values = mapValue.values.toList();
-      //SharedPreferencesHilper sharedPreferencesHilper = new SharedPreferencesHilper();
-      //sharedPreferencesHilper.storeToken(values[0]);
+      statue = response.body.contains('message');
+      SharedPreferencesHilper sharedPreferencesHilper = new SharedPreferencesHilper();
+      sharedPreferencesHilper.storeToken(values[0]);
     });
   }
 
