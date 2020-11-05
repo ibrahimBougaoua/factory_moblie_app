@@ -43,6 +43,8 @@ class SigninState extends State<Signin> {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ));
+    var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
+    var image = new Image(image: assetsImage, fit: BoxFit.cover);
 
     // TODO: implement build
     return MaterialApp(
@@ -52,18 +54,22 @@ class SigninState extends State<Signin> {
         //  title: Text('Signin'),
         //),
         body: Container(
+          decoration: new BoxDecoration(color: const Color(4280381900)),
           child: ListView(
-            padding: const EdgeInsets.only(top: 70,left: 15,right: 15,bottom: 8),
+            padding: const EdgeInsets.only(top: 10,left: 15,right: 15,bottom: 8),
             children: <Widget>[
+              Container(
+                child: image
+              ),
               Container(
                 height: 60,
                 child: new TextField(
                   controller: email,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'email',
-                    icon: new Icon(Icons.email)
+                      labelText: 'Email',
+                      labelStyle: new TextStyle(color: const Color(4294967295)),
+                      icon: new Icon(Icons.email)
                   ),
                 ),
               ),
@@ -74,7 +80,7 @@ class SigninState extends State<Signin> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       labelText: 'Password',
-                      hintText: 'password',
+                      labelStyle: new TextStyle(color: const Color(4294967295)),
                       icon: new Icon(Icons.vpn_key)
                   ),
                 ),
