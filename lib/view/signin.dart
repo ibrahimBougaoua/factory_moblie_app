@@ -102,7 +102,7 @@ class SigninState extends State<Signin> {
                     )
                   ),
                   color: Colors.blueAccent,
-                  child: new Text('sign up',style: new TextStyle(color: Colors.white,backgroundColor: Colors.blueAccent),),
+                  child: new Text('sign up',style: new TextStyle(color: Colors.white),),
                 ),
               ),
             ],

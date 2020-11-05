@@ -1,4 +1,5 @@
 import 'package:factory_moblie_app/controller/api.dart';
+import 'package:factory_moblie_app/view/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -177,6 +178,18 @@ class SignupState extends State<Signup> {
                 ),
               ),
               new Padding(padding: new EdgeInsets.only(top: 50)),
+              Container(
+                height: 60,
+                child: new FlatButton(
+                  onPressed: () => Navigator.of(context).push(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) => new Signin()
+                      )
+                  ),
+                  color: Colors.blueAccent,
+                  child: new Text('sign in',style: new TextStyle(color: Colors.white),),
+                ),
+              ),
               Container(
                 height: 60,
                 child: new Text(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:factory_moblie_app/controller/api.dart';
 import 'package:factory_moblie_app/view/signin.dart';
+import 'package:factory_moblie_app/view/signup.dart';
 
 void main() async {
   Api i = new Api();
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.amber
       ),
-      home: Signin(title: 'Signin'),
-      routes: <String,WidgetBuilder>{
-        '/signin' : (BuildContext context) => Signin(title:title)
-      }
+        home: Signin(title: 'Signin'),
+        routes: <String,WidgetBuilder>{
+          '/signin' : (BuildContext context) => Signin(title:title),
+          '/signup' : (BuildContext context) => Signup(title:title),
+        }
     );
   }
 }
