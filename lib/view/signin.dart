@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:factory_moblie_app/controller/api.dart';
 import 'package:factory_moblie_app/view/signup.dart';
 import 'package:flutter/material.dart';
@@ -38,13 +39,18 @@ class SigninState extends State<Signin> {
 
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
+
     // TODO: implement build
     return MaterialApp(
       title: 'Signin',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Signin'),
-        ),
+        //appBar: AppBar(
+        //  title: Text('Signin'),
+        //),
         body: Container(
           child: ListView(
             padding: const EdgeInsets.only(top: 70,left: 15,right: 15,bottom: 8),
