@@ -106,7 +106,7 @@ class SigninState extends State<Signin> {
                         builder: (BuildContext context) => new Signup()
                     )
                   ),
-                  child: new Text('Do you have an account ? Sign up.',style: new TextStyle(color: Colors.white),),
+                  child: new Text('You don\'t have an account ? Sign up.',style: new TextStyle(color: Colors.white),),
                 ),
               ),
               Container(
