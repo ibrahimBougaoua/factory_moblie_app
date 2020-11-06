@@ -4,5 +4,6 @@ class Config {
   static String signin = home + 'signin';
   static String signup = home + 'signup';
   static String factoris = home + 'factoris';
+  static String createFactory = home + 'add/factory';
 
 }
