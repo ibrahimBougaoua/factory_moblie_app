@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:factory_moblie_app/controller/api.dart';
 import 'package:factory_moblie_app/view/signin.dart';
 import 'package:flutter/material.dart';
@@ -46,17 +47,29 @@ class SignupState extends State<Signup> {
 
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
+
+    var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
+    var image = new Image(image: assetsImage, fit: BoxFit.cover);
+
     // TODO: implement build
     return MaterialApp(
       title: 'Signin',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Signin'),
-        ),
+        //appBar: AppBar(
+        //  title: Text('Signin'),
+        //),
         body: Container(
+          decoration: new BoxDecoration(color: new Color(4280381900)),
           child: ListView(
-            padding: const EdgeInsets.only(top: 70,left: 15,right: 15,bottom: 8),
+            padding: const EdgeInsets.only(top: 60,left: 15,right: 15,bottom: 30),
             children: <Widget>[
+              Container(
+                  child: image
+              ),
               Container(
                 height: 60,
                 child: new TextField(
@@ -65,7 +78,8 @@ class SignupState extends State<Signup> {
                   decoration: InputDecoration(
                       labelText: 'first name',
                       hintText: 'first name',
-                      icon: new Icon(Icons.title)
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.title,color: Colors.white)
                   ),
                 ),
               ),
@@ -77,7 +91,8 @@ class SignupState extends State<Signup> {
                   decoration: InputDecoration(
                       labelText: 'last name',
                       hintText: 'last name',
-                      icon: new Icon(Icons.title)
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.title,color: Colors.white)
                   ),
                 ),
               ),
@@ -89,7 +104,8 @@ class SignupState extends State<Signup> {
                   decoration: InputDecoration(
                       labelText: 'Email',
                       hintText: 'email',
-                      icon: new Icon(Icons.email)
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.email,color: Colors.white)
                   ),
                 ),
               ),
@@ -101,7 +117,8 @@ class SignupState extends State<Signup> {
                   decoration: InputDecoration(
                       labelText: 'Password',
                       hintText: 'password',
-                      icon: new Icon(Icons.vpn_key)
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.vpn_key,color: Colors.white)
                   ),
                 ),
               ),
@@ -148,11 +165,12 @@ class SignupState extends State<Signup> {
                 height: 60,
                 child: new TextField(
                   controller: phone,
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       labelText: 'phone',
                       hintText: 'phone',
-                      icon: new Icon(Icons.title)
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.title,color: Colors.white)
                   ),
                 ),
               ),
@@ -164,20 +182,21 @@ class SignupState extends State<Signup> {
                   decoration: InputDecoration(
                       labelText: 'address',
                       hintText: 'address',
-                      icon: new Icon(Icons.title)
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.title,color: Colors.white)
                   ),
                 ),
               ),
               new Padding(padding: new EdgeInsets.only(top: 50)),
               Container(
-                height: 60,
+                height: 50,
                 child: new RaisedButton(
                   onPressed: _pressed,
                   color: Colors.blueAccent,
-                  child: new Text('signun',style: new TextStyle(color: Colors.white,backgroundColor: Colors.blueAccent),),
+                  child: new Text('Sign un',style: new TextStyle(color: Colors.white),),
                 ),
               ),
-              new Padding(padding: new EdgeInsets.only(top: 50)),
+              new Padding(padding: new EdgeInsets.only(top: 30)),
               Container(
                 height: 60,
                 child: new FlatButton(
@@ -186,14 +205,13 @@ class SignupState extends State<Signup> {
                           builder: (BuildContext context) => new Signin()
                       )
                   ),
-                  color: Colors.blueAccent,
-                  child: new Text('sign in',style: new TextStyle(color: Colors.white),),
+                  child: new Text('Do you have an account ? Sign in',style: new TextStyle(color: Colors.white),),
                 ),
               ),
               Container(
-                height: 60,
+                height: 40,
                 child: new Text(
-                  'message',
+                  '',
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontWeight: FontWeight.bold),
