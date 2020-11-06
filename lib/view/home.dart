@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:folding_cell/folding_cell.dart';
 import 'package:factory_moblie_app/controller/api.dart';
@@ -29,6 +30,8 @@ class HomeState extends State<Home> {
     var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
     var image = new Image(image: assetsImage, fit: BoxFit.cover);
 
+    final _foldingCellKey = GlobalKey<SimpleFoldingCellState>();
+
     // TODO: implement build
     return MaterialApp(
       title: 'Signin',
@@ -39,15 +42,20 @@ class HomeState extends State<Home> {
         body: Container(
           decoration: new BoxDecoration(color: new Color(4280381900)),
           child: ListView(
-            padding: const EdgeInsets.only(top: 60,left: 15,right: 15,bottom: 30),
+            scrollDirection: Axis.vertical,
             children: <Widget>[
               Container(
                   child: SimpleFoldingCell(
-                    frontWidget: FrontWidget(),
-                    innerTopWidget: InnerTopWidget(),
-                    innerBottomWidget: InnerBottomWidget(),
-                    cellSize: Size(MediaQuery.of(context).size.width,175),
-                    padding: EdgeInsets.all(10.0)
+                      key: _foldingCellKey,
+                      frontWidget: FrontWidget(),
+                      innerTopWidget: InnerTopWidget(),
+                      innerBottomWidget: InnerBottomWidget(),
+                      cellSize: Size(MediaQuery.of(context).size.width,175),
+                      padding: EdgeInsets.all(10.0),
+                      animationDuration: Duration(milliseconds: 300),
+                      borderRadius: 10,
+                      onOpen: () => print('cell opened'),
+                      onClose: () => print('cell closed'),
                   )
               ),
             ],
