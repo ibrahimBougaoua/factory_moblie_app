@@ -45,6 +45,9 @@ class SignupState extends State<Signup> {
 
   int _value = 1;
 
+  List<String> options = <String>['man', 'woman'];
+  String dropdownValue = 'man';
+
   @override
   Widget build(BuildContext context) {
 
@@ -79,7 +82,7 @@ class SignupState extends State<Signup> {
                       labelText: 'First name',
                       hintText: 'First name',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.title,color: Colors.white)
+                      icon: new Icon(Icons.texture,color: Colors.white)
                   ),
                 ),
               ),
@@ -92,7 +95,7 @@ class SignupState extends State<Signup> {
                       labelText: 'Last name',
                       hintText: 'Last name',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.title,color: Colors.white)
+                      icon: new Icon(Icons.texture,color: Colors.white)
                   ),
                 ),
               ),
@@ -123,25 +126,46 @@ class SignupState extends State<Signup> {
                 ),
               ),
               Container(
-                height: 60,
-                child: DropdownButton(
-                    value: _value,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text("man"),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("woman"),
-                        value: 2,
-                      )
-                    ],
-                    onChanged: (value) {
-                      setState(() {
-                        _value = value;
-                      });
-                    }),
-              ),Container(
+                //alignment: Alignment.center,
+                //color: Colors.white,
+                padding: const EdgeInsets.only(top: 20,left: 40,right: 0,bottom: 0),
+                child: DropdownButton<String>(
+                  value: dropdownValue,
+                  onChanged: (String newValue) {
+                    setState(() {
+                      dropdownValue = newValue;
+                    });
+                  },
+                  style: TextStyle(color: Colors.blue),
+                  selectedItemBuilder: (BuildContext context) {
+                    return options.map((String value) {
+                      return Text(
+                        dropdownValue,
+                        style: TextStyle(color: Colors.white),
+                      );
+                    }).toList();
+                  },
+                  items: options.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+              Container(
+                width: 0,
+                height: 0,
+                margin: EdgeInsets.all(2),
+                padding: EdgeInsets.only(top: 0),
+                //alignment: Alignment.centerLeft,
+                child: Icon(
+                  Icons.merge_type,
+                  color: Colors.white,
+                  size: 20.0,
+                ),
+              ),
+              Container(
                 height: 60,
                 child: DropdownButton(
                     value: _value,
@@ -170,7 +194,7 @@ class SignupState extends State<Signup> {
                       labelText: 'Phone',
                       hintText: 'Phone',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.title,color: Colors.white)
+                      icon: new Icon(Icons.phone_iphone,color: Colors.white)
                   ),
                 ),
               ),
@@ -183,7 +207,7 @@ class SignupState extends State<Signup> {
                       labelText: 'Address',
                       hintText: 'Address',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.title,color: Colors.white)
+                      icon: new Icon(Icons.add_location,color: Colors.white)
                   ),
                 ),
               ),
