@@ -71,7 +71,7 @@ class CreateState extends State<Create> {
                       labelText: 'Name',
                       hintText: 'Name',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.email,color: Colors.white)
+                      icon: new Icon(Icons.texture,color: Colors.white)
                   ),
                 ),
               ),
@@ -84,7 +84,7 @@ class CreateState extends State<Create> {
                       labelText: 'Description',
                       hintText: 'Description',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.vpn_key,color: Colors.white)
+                      icon: new Icon(Icons.text_format,color: Colors.white)
                   ),
                 ),
               ),
@@ -97,7 +97,7 @@ class CreateState extends State<Create> {
                       labelText: 'Phone',
                       hintText: 'Phone',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.vpn_key,color: Colors.white)
+                      icon: new Icon(Icons.phone,color: Colors.white)
                   ),
                 ),
               ),
