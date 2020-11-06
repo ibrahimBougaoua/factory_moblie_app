@@ -76,8 +76,8 @@ class SignupState extends State<Signup> {
                   controller: first_name,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      labelText: 'first name',
-                      hintText: 'first name',
+                      labelText: 'First name',
+                      hintText: 'First name',
                       labelStyle: TextStyle(color: Colors.white,),
                       icon: new Icon(Icons.title,color: Colors.white)
                   ),
@@ -89,8 +89,8 @@ class SignupState extends State<Signup> {
                   controller: last_name,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      labelText: 'last name',
-                      hintText: 'last name',
+                      labelText: 'Last name',
+                      hintText: 'Last name',
                       labelStyle: TextStyle(color: Colors.white,),
                       icon: new Icon(Icons.title,color: Colors.white)
                   ),
@@ -103,7 +103,7 @@ class SignupState extends State<Signup> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       labelText: 'Email',
-                      hintText: 'email',
+                      hintText: 'Email',
                       labelStyle: TextStyle(color: Colors.white,),
                       icon: new Icon(Icons.email,color: Colors.white)
                   ),
@@ -116,7 +116,7 @@ class SignupState extends State<Signup> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       labelText: 'Password',
-                      hintText: 'password',
+                      hintText: 'Password',
                       labelStyle: TextStyle(color: Colors.white,),
                       icon: new Icon(Icons.vpn_key,color: Colors.white)
                   ),
@@ -167,8 +167,8 @@ class SignupState extends State<Signup> {
                   controller: phone,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      labelText: 'phone',
-                      hintText: 'phone',
+                      labelText: 'Phone',
+                      hintText: 'Phone',
                       labelStyle: TextStyle(color: Colors.white,),
                       icon: new Icon(Icons.title,color: Colors.white)
                   ),
@@ -180,8 +180,8 @@ class SignupState extends State<Signup> {
                   controller: address,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      labelText: 'address',
-                      hintText: 'address',
+                      labelText: 'Address',
+                      hintText: 'Address',
                       labelStyle: TextStyle(color: Colors.white,),
                       icon: new Icon(Icons.title,color: Colors.white)
                   ),
