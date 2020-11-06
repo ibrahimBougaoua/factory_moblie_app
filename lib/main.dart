@@ -3,6 +3,7 @@ import 'package:factory_moblie_app/controller/api.dart';
 import 'package:factory_moblie_app/view/signin.dart';
 import 'package:factory_moblie_app/view/signup.dart';
 import 'package:factory_moblie_app/view/home.dart';
+import 'package:factory_moblie_app/view/factory/create.dart';
 
 void main() async {
   Api i = new Api();
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
           '/signin' : (BuildContext context) => Signin(title:title),
           '/signup' : (BuildContext context) => Signup(title:title),
           '/home' : (BuildContext context) => Home(title:title),
+          '/createfactory' : (BuildContext context) => Create(title:title),
         }
     );
   }
