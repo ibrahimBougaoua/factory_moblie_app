@@ -57,7 +57,7 @@ class SigninState extends State<Signin> {
         body: Container(
           decoration: new BoxDecoration(color: new Color(4280381900)),
           child: ListView(
-            padding: const EdgeInsets.only(top: 10,left: 15,right: 15,bottom: 0),
+            padding: const EdgeInsets.only(top: 60,left: 15,right: 15,bottom: 30),
             children: <Widget>[
               Container(
                 child: image
@@ -88,36 +88,34 @@ class SigninState extends State<Signin> {
                   ),
                 ),
               ),
-              new Padding(padding: new EdgeInsets.only(top: 50)),
+              new Padding(padding: new EdgeInsets.only(top: 30)),
               Container(
-                height: 60,
+                height: 50,
                 child: new RaisedButton(
                   onPressed: _pressed,
                   color: Colors.blueAccent,
-                  child: new Text('signin',style: new TextStyle(color: Colors.white,backgroundColor: Colors.blueAccent),),
+                  child: new Text('Sign in',style: new TextStyle(color: Colors.white)),
                 ),
               ),
-              new Padding(padding: new EdgeInsets.only(top: 50)),
+              new Padding(padding: new EdgeInsets.only(top: 30)),
               Container(
-                height: 60,
-                child: new Text(
-                  'message',
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              new Padding(padding: new EdgeInsets.only(top: 50)),
-              Container(
-                height: 60,
+                height: 40,
                 child: new FlatButton(
                   onPressed: () => Navigator.of(context).push(
                     new MaterialPageRoute(
                         builder: (BuildContext context) => new Signup()
                     )
                   ),
-                  color: Colors.blueAccent,
-                  child: new Text('sign up',style: new TextStyle(color: Colors.white),),
+                  child: new Text('Do you have an account ? Sign up.',style: new TextStyle(color: Colors.white),),
+                ),
+              ),
+              Container(
+                height: 40,
+                child: new Text(
+                  '',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ],
