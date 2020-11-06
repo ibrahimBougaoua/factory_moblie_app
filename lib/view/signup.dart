@@ -48,6 +48,9 @@ class SignupState extends State<Signup> {
   List<String> options = <String>['man', 'woman'];
   String dropdownValue = 'man';
 
+  List<String> optionsC = <String>['alger','oran','constantine','annaba','blida','batna','djelfa','setif','sidi bel abbes','biskra','tebessa','el oued','skikda','tiaret','bejaia','tlemcen','ouargla','bechar','mostaganem','bordj bou arreridj','chlef','souk ahras','medea','setif','ouargla','ghardaia','saida','laghouat','m\'Sila','jijel','relizane','guelma','oum el bouaghi','khenchela','m\'sila','mascara','tizi ouzou'];
+  String dropdownValueC = 'alger';
+
   @override
   Widget build(BuildContext context) {
 
@@ -158,32 +161,53 @@ class SignupState extends State<Signup> {
                 height: 0,
                 margin: EdgeInsets.all(2),
                 padding: EdgeInsets.only(top: 0),
-                //alignment: Alignment.centerLeft,
+                alignment: Alignment.centerLeft,
                 child: Icon(
                   Icons.merge_type,
                   color: Colors.white,
                   size: 20.0,
                 ),
               ),
+
               Container(
-                height: 60,
-                child: DropdownButton(
-                    value: _value,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text("man"),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("woman"),
-                        value: 2,
-                      )
-                    ],
-                    onChanged: (value) {
-                      setState(() {
-                        _value = value;
-                      });
-                    }),
+                //alignment: Alignment.center,
+                //color: Colors.white,
+                padding: const EdgeInsets.only(top: 20,left: 40,right: 0,bottom: 0),
+                child: DropdownButton<String>(
+                  value: dropdownValueC,
+                  onChanged: (String newValue) {
+                    setState(() {
+                      dropdownValueC = newValue;
+                    });
+                  },
+                  style: TextStyle(color: Colors.blue),
+                  selectedItemBuilder: (BuildContext context) {
+                    return optionsC.map((String value) {
+                      return Text(
+                        dropdownValueC,
+                        style: TextStyle(color: Colors.white),
+                      );
+                    }).toList();
+                  },
+                  items: optionsC.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+              Container(
+                width: 0,
+                height: 0,
+                margin: EdgeInsets.all(2),
+                padding: EdgeInsets.only(top: 0),
+                alignment: Alignment.centerLeft,
+                child: Icon(
+                  Icons.location_city,
+                  color: Colors.white,
+                  size: 20.0,
+                ),
               ),
               Container(
                 height: 60,
