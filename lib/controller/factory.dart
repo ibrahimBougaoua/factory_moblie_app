@@ -5,8 +5,10 @@ import 'dart:convert';
 
 class Factory {
 
-  void create(String name,String desc,String phone,String logo,int id) {
-    http.post(Config.createFactory, headers: {
+  bool statue;
+
+  create(String name,String desc,String phone,String logo,int id) async {
+    await http.post(Config.createFactory, headers: {
       'Accept': 'application/json',
       'token': 'jhkhlhlhlhlhlkhlkhlh'
     },
@@ -18,6 +20,11 @@ class Factory {
           'employee_id': id,
         }).then((response) {
       print('response : ${response.body}');
+      Map mapValue = json.decode(response.body);
+      var values = mapValue.values.toList();
+      statue = response.body.contains('message');
+      SharedPreferencesHilper sharedPreferencesHilper = new SharedPreferencesHilper();
+      sharedPreferencesHilper.storeToken(values[0]);
     });
   }
 

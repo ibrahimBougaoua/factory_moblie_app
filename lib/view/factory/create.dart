@@ -1,5 +1,5 @@
 import 'package:flutter/services.dart';
-import 'package:factory_moblie_app/controller/api.dart';
+import 'package:factory_moblie_app/controller/factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -15,7 +15,7 @@ class Create extends StatefulWidget {
 
 class CreateState extends State<Create> {
 
-  Api i = new Api();
+  Factory f = new Factory();
 
   final TextEditingController name = new TextEditingController();
   final TextEditingController desc = new TextEditingController();
@@ -25,8 +25,8 @@ class CreateState extends State<Create> {
     setState(() {
       if(name.text.trim().toLowerCase().isNotEmpty && desc.text.trim().toLowerCase().isNotEmpty && phone.text.trim().toLowerCase().isNotEmpty)
       {
-        i.create(name.text.trim().toLowerCase(), desc.text.trim(), phone.text.trim(),'logo',1).whenComplete((){
-          if(i.statue)
+        f.create(name.text.trim().toLowerCase(), desc.text.trim(), phone.text.trim(),'logo',1).whenComplete((){
+          if(f.statue)
           {
             print('okkkkkkkkkkkkkkkkkk');
           } else {
