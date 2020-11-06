@@ -43,6 +43,7 @@ class SigninState extends State<Signin> {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ));
+
     var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
     var image = new Image(image: assetsImage, fit: BoxFit.cover);
 
@@ -54,9 +55,9 @@ class SigninState extends State<Signin> {
         //  title: Text('Signin'),
         //),
         body: Container(
-          decoration: new BoxDecoration(color: const Color(4280381900)),
+          decoration: new BoxDecoration(color: new Color(4280381900)),
           child: ListView(
-            padding: const EdgeInsets.only(top: 10,left: 15,right: 15,bottom: 8),
+            padding: const EdgeInsets.only(top: 10,left: 15,right: 15,bottom: 0),
             children: <Widget>[
               Container(
                 child: image
@@ -68,8 +69,9 @@ class SigninState extends State<Signin> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       labelText: 'Email',
-                      labelStyle: new TextStyle(color: const Color(4294967295)),
-                      icon: new Icon(Icons.email)
+                      hintText: 'email',
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.email,color: Colors.white)
                   ),
                 ),
               ),
@@ -80,8 +82,9 @@ class SigninState extends State<Signin> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       labelText: 'Password',
-                      labelStyle: new TextStyle(color: const Color(4294967295)),
-                      icon: new Icon(Icons.vpn_key)
+                      hintText: 'password',
+                      labelStyle: TextStyle(color: Colors.white,),
+                      icon: new Icon(Icons.vpn_key,color: Colors.white)
                   ),
                 ),
               ),
