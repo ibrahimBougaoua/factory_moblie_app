@@ -218,7 +218,7 @@ class SignupState extends State<Signup> {
                       labelText: 'Phone',
                       hintText: 'Phone',
                       labelStyle: TextStyle(color: Colors.white,),
-                      icon: new Icon(Icons.phone_iphone,color: Colors.white)
+                      icon: new Icon(Icons.phone,color: Colors.white)
                   ),
                 ),
               ),

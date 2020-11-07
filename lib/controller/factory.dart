@@ -7,18 +7,16 @@ class Factory {
 
   bool statue;
 
-  create(String name,String desc,String phone,String logo,int id) async {
+  create(String name,String desc,String phone,String logo,String id)  async {
     await http.post(Config.createFactory, headers: {
       'Accept': 'application/json',
-      'token': 'jhkhlhlhlhlhlkhlkhlh'
-    },
-        body: {
-          'name': name,
-          'desc': desc,
-          'phone': phone,
-          'logo': logo,
-          'employee_id': id,
-        }).then((response) {
+    }, body: {
+      "name": name,
+      "desc": desc,
+      "phone": phone,
+      "logo": logo,
+      "employee_id": id,
+    }).then((response) {
       print('response : ${response.body}');
       Map mapValue = json.decode(response.body);
       var values = mapValue.values.toList();

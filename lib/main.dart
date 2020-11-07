@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:factory_moblie_app/controller/api.dart';
+import 'package:factory_moblie_app/controller/factory.dart';
 import 'package:factory_moblie_app/view/signin.dart';
 import 'package:factory_moblie_app/view/signup.dart';
 import 'package:factory_moblie_app/view/home.dart';
 import 'package:factory_moblie_app/view/factory/create.dart';
 
 void main() async {
-  Api i = new Api();
-  i.signin('adminstrator@gmail.comd','dddd');
+
+  //Api i = new Api();
+  //i.signin('adminstrator@gmail.comd','dddd');
+
+  //Factory f = new Factory();
+  //f.create('name','desc','phone','logo','1');
+
   runApp(MyApp());
 }
 

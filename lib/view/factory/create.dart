@@ -25,7 +25,7 @@ class CreateState extends State<Create> {
     setState(() {
       if(name.text.trim().toLowerCase().isNotEmpty && desc.text.trim().toLowerCase().isNotEmpty && phone.text.trim().toLowerCase().isNotEmpty)
       {
-        f.create(name.text.trim().toLowerCase(), desc.text.trim(), phone.text.trim(),'logo',1).whenComplete((){
+        f.create(name.text.trim().toLowerCase(), desc.text.trim(), phone.text.trim(),'logo','1').whenComplete((){
           if(f.statue)
           {
             print('okkkkkkkkkkkkkkkkkk');
