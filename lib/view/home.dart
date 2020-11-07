@@ -44,26 +44,30 @@ class HomeState extends State<Home> {
           child: ListView(
             scrollDirection: Axis.vertical,
             children: <Widget>[
-              Container(
-                  child: SimpleFoldingCell(
-                      key: _foldingCellKey,
-                      frontWidget: FrontWidget(),
-                      innerTopWidget: InnerTopWidget(),
-                      innerBottomWidget: InnerBottomWidget(),
-                      cellSize: Size(MediaQuery.of(context).size.width,175),
-                      padding: EdgeInsets.all(10.0),
-                      animationDuration: Duration(milliseconds: 300),
-                      borderRadius: 10,
-                      onOpen: () => print('cell opened'),
-                      onClose: () => print('cell closed'),
-                  )
-              ),
+              Element()
             ],
           ),
         ),
       ),
     );
 
+  }
+
+  Container Element() {
+  return Container(
+  child: SimpleFoldingCell(
+  //key: _foldingCellKey,
+  frontWidget: FrontWidget(),
+  innerTopWidget: InnerTopWidget(),
+  innerBottomWidget: InnerBottomWidget(),
+  cellSize: Size(MediaQuery.of(context).size.width,175),
+  padding: EdgeInsets.all(10.0),
+  animationDuration: Duration(milliseconds: 300),
+  borderRadius: 10,
+  onOpen: () => print('cell opened'),
+  onClose: () => print('cell closed'),
+  )
+  );
   }
 
   Container InnerTopWidget() {
