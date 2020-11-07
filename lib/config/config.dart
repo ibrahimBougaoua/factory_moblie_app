@@ -5,5 +5,6 @@ class Config {
   static String signup = home + 'signup';
   static String factoris = home + 'factoris';
   static String createFactory = home + 'add/factory';
+  static String allFactories = home + 'all/factories/1'; // most be dnmc
 
 }

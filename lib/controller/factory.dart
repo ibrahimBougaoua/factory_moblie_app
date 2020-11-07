@@ -26,4 +26,12 @@ class Factory {
     });
   }
 
+  Future<List> getAllFactorisById() async {
+    http.Response response = await http.get(Config.allFactories, headers: {
+      'Accept': 'application/json'
+    });
+    print(response.body);
+    return json.decode(response.body);
+  }
+
 }

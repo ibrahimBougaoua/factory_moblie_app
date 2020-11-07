@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:factory_moblie_app/controller/factory.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +15,8 @@ class All extends StatefulWidget {
 
 class AllState extends State<All> {
 
+  Factory f = new Factory();
+
   @override
   Widget build(BuildContext context) {
 
@@ -26,8 +27,10 @@ class AllState extends State<All> {
     var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
     var image = new Image(image: assetsImage, fit: BoxFit.cover);
 
-    final List<String> entries = <String>['A','B','C'];
+    final Future<List> entries = f.getAllFactorisById();
     final List<int> colorCodes = <int>[600,500,100];
+
+    print(entries);
 
     // TODO: implement build
     return MaterialApp(
@@ -40,12 +43,12 @@ class AllState extends State<All> {
           decoration: new BoxDecoration(color: new Color(4280381900)),
           child: ListView.separated(
             padding: const EdgeInsets.all(8),
-            itemCount: entries.length,
+            itemCount: 3,
             itemBuilder: (BuildContext context,int index) {
               return Container(
                 height: 50,
                 color: Colors.amber[colorCodes[index]],
-                child: Center(child: Text('Entry ${entries[index]}'),)
+                //child: Center(child: Text('Entry ${entries.}'),)
               );
             },
             separatorBuilder: (BuildContext context,int index) => const Divider(),
