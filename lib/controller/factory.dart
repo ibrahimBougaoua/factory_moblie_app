@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:factory_moblie_app/config/config.dart';
 import 'package:factory_moblie_app/controller/sharedPreferences.dart';
+import 'package:factory_moblie_app/model/factory.dart';
 import 'dart:convert';
 
 class Factory {
@@ -26,11 +27,20 @@ class Factory {
     });
   }
 
-  Future<List> getAllFactorisById() async {
+  Future<List<FactoryModel>> getAllFactorisById() async {
     http.Response response = await http.get(Config.allFactories, headers: {
       'Accept': 'application/json'
     });
-    print(response.body);
+
+    Map mapValue = json.decode(response.body);
+    final elments = mapValue.values.toList();
+    print(elments[0]);
+
+    for(var i = 0;i<elments.length;i++)
+      {
+        print(elments[i]);
+      }
+
     return json.decode(response.body);
   }
 
