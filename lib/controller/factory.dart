@@ -6,6 +6,7 @@ import 'dart:convert';
 
 class Factory {
 
+  List<FactoryModel> factoryModel = new List<FactoryModel>();
   bool statue;
 
   create(String name,String desc,String phone,String logo,String id)  async {
@@ -27,20 +28,10 @@ class Factory {
     });
   }
 
-  Future<List<FactoryModel>> getAllFactorisById() async {
+  Future<List> getAllFactorisById() async {
     http.Response response = await http.get(Config.allFactories, headers: {
       'Accept': 'application/json'
     });
-
-    Map mapValue = json.decode(response.body);
-    final elments = mapValue.values.toList();
-    print(elments[0]);
-
-    for(var i = 0;i<elments.length;i++)
-      {
-        print(elments[i]);
-      }
-
     return json.decode(response.body);
   }
 
