@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:factory_moblie_app/controller/factory.dart';
+import 'package:factory_moblie_app/view/factory/view.dart';
 import 'package:factory_moblie_app/model/factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -54,7 +55,11 @@ class AllState extends State<All> {
                           title: new Text(list[i]['name'],style: new TextStyle(fontSize: 15)),
                           subtitle: new Text(list[i]['created_at'],style: new TextStyle(fontSize: 12)),
                           trailing:  RaisedButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.of(context).push(
+                                new MaterialPageRoute(
+                                    builder: (BuildContext context) => new View(list:list , index:i)
+                                )
+                            ),
                         color: new Color(4280381900),
                         child: new Text('More',style: new TextStyle(color: Colors.white,fontSize: 12)),
                       ),
