@@ -31,6 +31,22 @@ class Category {
     return json.decode(response.body);
   }
 
+  update(String name,String slug,String desc,String category_id)  async {
+    await http.put(Config.updateCategory, headers: {
+      'Accept': 'application/json'
+    },
+        body: {
+          "name": name,
+          "slug": slug,
+          "description": desc
+        }).then((response) {
+      print('response : ${response.body}');
+      Map mapValue = json.decode(response.body);
+      var values = mapValue.values.toList();
+      statue = response.body.contains('message');
+    });
+  }
+
   deleteCategoryById(int id) async{
     await http.delete(Config.deleteCategoryById, headers: {
       'Accept': 'application/json'
