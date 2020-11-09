@@ -1,7 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:factory_moblie_app/config/config.dart';
 import 'package:factory_moblie_app/controller/sharedPreferences.dart';
-import 'package:factory_moblie_app/model/factory.dart';
 import 'dart:convert';
 
 class Category {
