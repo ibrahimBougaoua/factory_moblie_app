@@ -3,17 +3,17 @@ import 'package:factory_moblie_app/controller/pointOfSale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class Create extends StatefulWidget {
+class CreatePointOfSale extends StatefulWidget {
 
-  Create({Key key,this.title}) : super(key : key);
+  CreatePointOfSale({Key key,this.title}) : super(key : key);
   final String title;
 
   @override
-  State<StatefulWidget> createState() => CreateState();
+  State<StatefulWidget> createState() => CreatePointOfSaleState();
 
 }
 
-class CreateState extends State<Create> {
+class CreatePointOfSaleState extends State<CreatePointOfSale> {
 
   PointOfSale p = new PointOfSale();
 
