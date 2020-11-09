@@ -35,4 +35,13 @@ class Factory {
     return json.decode(response.body);
   }
 
+  void deleteFactoryById(int id) {
+    http.delete(Config.deleteFactoryById, headers: {
+      'Accept': 'application/json'
+    }).then((response) {
+      print('response : ${response.body}');
+    });
+
+  }
+
 }
