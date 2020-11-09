@@ -6,5 +6,6 @@ class Config {
   static String factoris = home + 'factoris';
   static String createFactory = home + 'add/factory';
   static String allFactories = home + 'all/factories/1'; // most be dnmc
+  static String deleteFactoryById = home + 'factory/delete/1'; // most be dnmc
 
 }
