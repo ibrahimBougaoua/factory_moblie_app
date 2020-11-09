@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:factory_moblie_app/controller/factory.dart';
+import 'package:factory_moblie_app/view/factory/all.dart';
 import 'package:factory_moblie_app/model/factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -65,6 +66,28 @@ class ViewState extends State<View> {
               height: 50,
               child: new ListTile(
                 title: Text('Created at : ${ widget.list[widget.index]['created_at']}'),
+              ),
+            ),
+            Container(
+              height: 50,
+              child: AlertDialog(
+                title: Text('AlertDialog Title'),
+                content: SingleChildScrollView(
+                  child: ListBody(
+                    children: <Widget>[
+                      Text('This is a demo alert dialog.'),
+                      Text('Would you like to approve of this message?'),
+                    ],
+                  ),
+                ),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text('Approve'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
               ),
             ),
           ],
