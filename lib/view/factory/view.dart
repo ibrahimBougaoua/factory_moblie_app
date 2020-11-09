@@ -18,6 +18,9 @@ class View extends StatefulWidget {
 }
 
 class ViewState extends State<View> {
+  
+  Factory f = Factory();
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +31,6 @@ class ViewState extends State<View> {
 
     var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
     var image = new Image(image: assetsImage, fit: BoxFit.cover);
-
-    Factory f = Factory();
 
     // TODO: implement build
     return MaterialApp(
@@ -70,24 +71,18 @@ class ViewState extends State<View> {
             ),
             Container(
               height: 50,
-              child: AlertDialog(
-                title: Text('AlertDialog Title'),
-                content: SingleChildScrollView(
-                  child: ListBody(
-                    children: <Widget>[
-                      Text('This is a demo alert dialog.'),
-                      Text('Would you like to approve of this message?'),
-                    ],
-                  ),
-                ),
-                actions: <Widget>[
-                  FlatButton(
-                    child: Text('Approve'),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
+              child: RaisedButton(
+                onPressed: () =>
+                f.deleteFactoryById(1).whenComplete((){
+                  if(f.statue)
+                  {
+                    print('okkkkkkkkkkkkkkkkkk');
+                  } else {
+                    Navigator.pushReplacementNamed(context, '/all');
+                  }
+                }),
+                color: Colors.red,
+                child: new Text('Delete',style: new TextStyle(color: Colors.white,fontSize: 12)),
               ),
             ),
           ],
@@ -96,6 +91,29 @@ class ViewState extends State<View> {
       ),
     );
 
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the button
+    Widget okButton = FlatButton(
+      child: Text("OK"),
+      onPressed: () { },
+    );
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("My title"),
+      content: Text("This is my message."),
+      actions: [
+        okButton,
+      ],
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
 }

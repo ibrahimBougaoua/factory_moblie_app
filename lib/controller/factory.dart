@@ -35,13 +35,15 @@ class Factory {
     return json.decode(response.body);
   }
 
-  void deleteFactoryById(int id) {
-    http.delete(Config.deleteFactoryById, headers: {
+  deleteFactoryById(int id) async{
+    await http.delete(Config.deleteFactoryById, headers: {
       'Accept': 'application/json'
     }).then((response) {
       print('response : ${response.body}');
+      Map mapValue = json.decode(response.body);
+      var values = mapValue.values.toList();
+      statue = response.body.contains('message');
     });
-
   }
 
 }
