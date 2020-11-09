@@ -32,6 +32,21 @@ class PointOfSale {
     return json.decode(response.body);
   }
 
+  update(String name,String address,String point_sale_id)  async {
+    await http.put(Config.updatePointOfSale, headers: {
+      'Accept': 'application/json'
+    },
+        body: {
+          "name": name,
+          "address": address,
+        }).then((response) {
+      print('response : ${response.body}');
+      Map mapValue = json.decode(response.body);
+      var values = mapValue.values.toList();
+      statue = response.body.contains('message');
+    });
+  }
+
   deletePointOfSaleById(int id) async{
     await http.delete(Config.deletePointOfSaleById, headers: {
       'Accept': 'application/json'

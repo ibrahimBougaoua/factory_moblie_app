@@ -25,7 +25,7 @@ class UpdateState extends State<Update> {
     setState(() {
       if(name.text.trim().toLowerCase().isNotEmpty && address.text.trim().toLowerCase().isNotEmpty)
       {
-        p.update(name.text.trim().toLowerCase(), address.text.trim()).whenComplete((){
+        p.update(name.text.trim().toLowerCase(), address.text.trim(),'1').whenComplete((){
           if(p.statue)
           {
             print('okkkkkkkkkkkkkkkkkk');
