@@ -6,6 +6,7 @@ import 'package:factory_moblie_app/view/signup.dart';
 import 'package:factory_moblie_app/view/home.dart';
 import 'package:factory_moblie_app/view/factory/create.dart';
 import 'package:factory_moblie_app/view/factory/all.dart';
+import 'package:factory_moblie_app/view/pointOfSale/all.dart';
 
 void main() async {
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
           '/home' : (BuildContext context) => Home(title:title),
           '/createfactory' : (BuildContext context) => Create(title:title),
           '/all' : (BuildContext context) => All(title:title),
+          '/allPointOfSale' : (BuildContext context) => AllPointOfSale(),
         }
     );
   }

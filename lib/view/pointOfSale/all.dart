@@ -1,7 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:factory_moblie_app/controller/factory.dart';
+import 'package:factory_moblie_app/controller/pointOfSale.dart';
 import 'package:factory_moblie_app/view/factory/view.dart';
-import 'package:factory_moblie_app/model/factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:convert';
@@ -28,7 +27,7 @@ class AllPointOfSaleState extends State<AllPointOfSale> {
     var assetsImage = new AssetImage('assets/images/logo.png'); //<- Creates an object that fetches an image.
     var image = new Image(image: assetsImage, fit: BoxFit.cover);
 
-    Factory f = Factory();
+    PointOfSale p = PointOfSale();
 
     // TODO: implement build
     return MaterialApp(
@@ -38,7 +37,7 @@ class AllPointOfSaleState extends State<AllPointOfSale> {
             title: Text('All Point Of Sale'),
           ),
           body: new FutureBuilder<List>(
-            future: f.getAllFactorisById(),
+            future: p.getAllPointOfSaleById(),
             builder: (context ,snapshot){
               if(snapshot.hasError) print(snapshot.error);
               var list = snapshot.data;
