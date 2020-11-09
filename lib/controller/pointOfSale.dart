@@ -9,7 +9,7 @@ class PointOfSale {
   bool statue;
 
   create(String name,String address,String factory_id)  async {
-    await http.post(Config.createFactory, headers: {
+    await http.post(Config.createPointOfSale, headers: {
       'Accept': 'application/json',
     }, body: {
       "name": name,
@@ -26,14 +26,14 @@ class PointOfSale {
   }
 
   Future<List> getAllPointOfSaleById() async {
-    http.Response response = await http.get(Config.allFactories, headers: {
+    http.Response response = await http.get(Config.allPointOfSales, headers: {
       'Accept': 'application/json'
     });
     return json.decode(response.body);
   }
 
   deletePointOfSaleById(int id) async{
-    await http.delete(Config.deleteFactoryById, headers: {
+    await http.delete(Config.deletePointOfSaleById, headers: {
       'Accept': 'application/json'
     }).then((response) {
       print('response : ${response.body}');
