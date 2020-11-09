@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:factory_moblie_app/controller/pointOfSale.dart';
-import 'package:factory_moblie_app/view/factory/view.dart';
+import 'package:factory_moblie_app/view/pointOfSale/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:convert';

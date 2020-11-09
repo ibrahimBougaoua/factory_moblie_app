@@ -54,13 +54,7 @@ class ViewState extends State<View> {
               Container(
                 height: 50,
                 child: new ListTile(
-                  title: Text('Destiption : ${ widget.list[widget.index]['desc']}'),
-                ),
-              ),
-              Container(
-                height: 50,
-                child: new ListTile(
-                  title: Text('Phone : ${ widget.list[widget.index]['phone']}'),
+                  title: Text('address : ${ widget.list[widget.index]['address']}'),
                 ),
               ),
               Container(
