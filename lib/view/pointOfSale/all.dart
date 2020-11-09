@@ -32,10 +32,10 @@ class AllPointOfSaleState extends State<AllPointOfSale> {
 
     // TODO: implement build
     return MaterialApp(
-      title: 'All factories',
+      title: 'All Point Of Sale',
       home: Scaffold(
           appBar: AppBar(
-            title: Text('All factories'),
+            title: Text('All Point Of Sale'),
           ),
           body: new FutureBuilder<List>(
             future: f.getAllFactorisById(),
