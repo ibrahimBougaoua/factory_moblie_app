@@ -25,8 +25,8 @@ class CreateCategoryState extends State<CreateCategory> {
     setState(() {
       if(name.text.trim().toLowerCase().isNotEmpty && slug.text.trim().toLowerCase().isNotEmpty && desc.text.trim().toLowerCase().isNotEmpty)
       {
-        c.create(name.text.trim().toLowerCase(), slug.text.trim(), desc.text.trim(),'1').whenComplete((){
-          if(p.statue)
+        c.create(name.text.trim().toLowerCase(), slug.text.trim(), desc.text.trim()).whenComplete((){
+          if(c.statue)
           {
             print('okkkkkkkkkkkkkkkkkk');
           } else {
