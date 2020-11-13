@@ -1,3 +1,5 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class Config {
 
   static String home = 'http://192.168.43.233:5002/';
@@ -22,6 +24,14 @@ class Config {
     {'name': 'tab', 'iconPath': 'assets/images/logo.png'},
     {'name': 'tab', 'iconPath': 'assets/images/logo.png'},
     {'name': 'tab', 'iconPath': 'assets/images/logo.png'}
+  ];
+
+  static List<Map> listItems = [
+    {'title': 'Dashboard', 'icon': FontAwesomeIcons.dashcube},
+    {'title': 'Factory', 'icon': FontAwesomeIcons.fastForward},
+    {'title': 'Lasts', 'icon': FontAwesomeIcons.lastfm},
+    {'title': 'News', 'icon': FontAwesomeIcons.newspaper},
+    {'title': 'About us', 'icon': FontAwesomeIcons.addressBook}
   ];
 
 }
