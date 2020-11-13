@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class HomeScreen extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  HomeScreenState createState() => HomeScreenState();
+  HomeState createState() => HomeState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class HomeState extends State<Home> {
 
   double xOffset = 0;
   double yOffset = 0;

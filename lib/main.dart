@@ -3,14 +3,14 @@ import 'package:factory_moblie_app/controller/api.dart';
 import 'package:factory_moblie_app/controller/factory.dart';
 import 'package:factory_moblie_app/view/signin.dart';
 import 'package:factory_moblie_app/view/signup.dart';
-import 'package:factory_moblie_app/view/home.dart';
+//import 'package:factory_moblie_app/view/home.dart';
 import 'package:factory_moblie_app/view/factory/create.dart';
 import 'package:factory_moblie_app/view/factory/all.dart';
 import 'package:factory_moblie_app/view/pointOfSale/all.dart';
 import 'package:factory_moblie_app/view/pointOfSale/create.dart';
 
-import 'drowScreen.dart';
-import 'homeScreen.dart';
+import 'screen.dart';
+import 'home.dart';
 
 void main() async {
 
@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
       Scaffold(
       body: Stack(
         children: <Widget>[
-          DrowScreen(),
-          HomeScreen()
+          Screen(),
+          Home(),
         ],
       ),
     ),

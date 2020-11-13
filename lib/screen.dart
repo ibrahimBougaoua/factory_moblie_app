@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class DrowScreen extends StatefulWidget {
+class Screen extends StatefulWidget {
   @override
-  DrowScreenState createState() => DrowScreenState();
+  ScreenState createState() => ScreenState();
 }
 
-class DrowScreenState extends State<DrowScreen> {
+class ScreenState extends State<Screen> {
 
   @override
   Widget build(BuildContext context) {
