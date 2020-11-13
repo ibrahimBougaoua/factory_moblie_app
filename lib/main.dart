@@ -9,6 +9,9 @@ import 'package:factory_moblie_app/view/factory/all.dart';
 import 'package:factory_moblie_app/view/pointOfSale/all.dart';
 import 'package:factory_moblie_app/view/pointOfSale/create.dart';
 
+import 'drowScreen.dart';
+import 'homeScreen.dart';
+
 void main() async {
 
   //Api i = new Api();
@@ -21,23 +24,35 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final String title = '';
+  //final String title = '';
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
-      theme: ThemeData(
-        primaryColor: Colors.amber
+      home:
+      Scaffold(
+      body: Stack(
+        children: <Widget>[
+          DrowScreen(),
+          HomeScreen()
+        ],
       ),
-        home: Signin(title: 'Signin'),
-        routes: <String,WidgetBuilder>{
-          '/signin' : (BuildContext context) => Signin(title:title),
-          '/signup' : (BuildContext context) => Signup(title:title),
-          '/home' : (BuildContext context) => Home(title:title),
-          '/createfactory' : (BuildContext context) => Create(title:title),
-          '/all' : (BuildContext context) => All(title:title),
-          '/allPointOfSale' : (BuildContext context) => AllPointOfSale(),
-          '/createPointOfSale' : (BuildContext context) => CreatePointOfSale(),
-        }
+    ),
     );
+
+//    return MaterialApp(
+//      title: 'Flutter',
+//        theme: ThemeData(
+//        primaryColor: Colors.amber
+//      ),
+//        home: Signin(title: 'Signin'),
+//        routes: <String,WidgetBuilder>{
+//          '/signin' : (BuildContext context) => Signin(title:title),
+//          '/signup' : (BuildContext context) => Signup(title:title),
+//          '/home' : (BuildContext context) => Home(title:title),
+//          '/createfactory' : (BuildContext context) => Create(title:title),
+//          '/all' : (BuildContext context) => All(title:title),
+//          '/allPointOfSale' : (BuildContext context) => AllPointOfSale(),
+//          '/createPointOfSale' : (BuildContext context) => CreatePointOfSale(),
+//        }
+//    );
   }
 }

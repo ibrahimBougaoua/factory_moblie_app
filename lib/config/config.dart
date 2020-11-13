@@ -16,4 +16,12 @@ class Config {
   static String allCategories = home + 'all/pointofsale/1'; // most be dnmc
   static String deleteCategoryById = home + 'category/delete/1'; // most be dnmc
 
+  static List<Map> images = [
+    {'name': 'tab', 'iconPath': 'assets/images/logo.png'},
+    {'name': 'tab', 'iconPath': 'assets/images/logo.png'},
+    {'name': 'tab', 'iconPath': 'assets/images/logo.png'},
+    {'name': 'tab', 'iconPath': 'assets/images/logo.png'},
+    {'name': 'tab', 'iconPath': 'assets/images/logo.png'}
+  ];
+
 }

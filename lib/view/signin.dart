@@ -30,7 +30,7 @@ class SigninState extends State<Signin> {
               {
                 print('okkkkkkkkkkkkkkkkkk');
               } else {
-                Navigator.pushReplacementNamed(context, '/createPointOfSale');
+                Navigator.pushReplacementNamed(context, '/home');
             }
           });
         }
