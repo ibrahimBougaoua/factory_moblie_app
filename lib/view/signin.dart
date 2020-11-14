@@ -57,10 +57,18 @@ class SigninState extends State<Signin> {
         body: Container(
           decoration: new BoxDecoration(color: new Color(4280381900)),
           child: ListView(
-            padding: const EdgeInsets.only(top: 60,left: 15,right: 15,bottom: 30),
+            padding: const EdgeInsets.only(top: 40,left: 15,right: 15,bottom: 30),
             children: <Widget>[
               Container(
-                child: image
+                width: 220.0,
+                height: 250.0,
+                alignment: Alignment.center,
+                decoration: new BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/logo.png'),
+                      fit: BoxFit.fill
+                  ),
+                ),
               ),
               Container(
                 height: 60,

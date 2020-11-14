@@ -11,6 +11,7 @@ import 'package:factory_moblie_app/view/pointOfSale/create.dart';
 
 import 'screen.dart';
 import 'home.dart';
+import 'animated.dart';
 
 void main() async {
 
@@ -24,35 +25,24 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  //final String title = '';
+  final String title = '';
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home:
-      Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Screen(),
-          Home(),
-        ],
-      ),
-    ),
-    );
 
-//    return MaterialApp(
-//      title: 'Flutter',
-//        theme: ThemeData(
-//        primaryColor: Colors.amber
-//      ),
-//        home: Signin(title: 'Signin'),
-//        routes: <String,WidgetBuilder>{
-//          '/signin' : (BuildContext context) => Signin(title:title),
-//          '/signup' : (BuildContext context) => Signup(title:title),
-//          '/home' : (BuildContext context) => Home(title:title),
-//          '/createfactory' : (BuildContext context) => Create(title:title),
-//          '/all' : (BuildContext context) => All(title:title),
-//          '/allPointOfSale' : (BuildContext context) => AllPointOfSale(),
-//          '/createPointOfSale' : (BuildContext context) => CreatePointOfSale(),
-//        }
-//    );
+    return MaterialApp(
+      title: 'Flutter',
+        theme: ThemeData(
+        primaryColor: Colors.amber
+      ),
+        home: Signin(title: 'Signin'),
+        routes: <String,WidgetBuilder>{
+          '/signin' : (BuildContext context) => Signin(title:title),
+          '/signup' : (BuildContext context) => Signup(title:title),
+          '/home' : (BuildContext context) => Animated(),
+          '/createfactory' : (BuildContext context) => Create(title:title),
+          '/all' : (BuildContext context) => All(title:title),
+          '/allPointOfSale' : (BuildContext context) => AllPointOfSale(),
+          '/createPointOfSale' : (BuildContext context) => CreatePointOfSale(),
+        }
+    );
   }
 }

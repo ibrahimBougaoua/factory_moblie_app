@@ -1,6 +1,5 @@
 import 'package:http/http.dart' as http;
 import 'package:factory_moblie_app/config/config.dart';
-import 'package:factory_moblie_app/controller/sharedPreferences.dart';
 import 'package:factory_moblie_app/model/factory.dart';
 import 'dart:convert';
 
@@ -23,8 +22,6 @@ class Factory {
       Map mapValue = json.decode(response.body);
       var values = mapValue.values.toList();
       statue = response.body.contains('message');
-      SharedPreferencesHilper sharedPreferencesHilper = new SharedPreferencesHilper();
-      sharedPreferencesHilper.storeToken(values[0]);
     });
   }
 
